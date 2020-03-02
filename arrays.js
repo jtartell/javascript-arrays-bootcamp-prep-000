@@ -1,52 +1,45 @@
 var chocolateBars = ["snickers", "hundred grand","kitkat", "skittles"];
+var candyString = "foo"
 
-function addElementToBeginningOfArray() {
-  var array = [1]
-  return  array.unshift('foo') }
-
-
-function destructivelyAddElementToBeginningOfArray() {
-  var new_array = [1]
-  return ["foo",...new_array]
+function addElementToBeginningOfArray(chocolateBars, candyString){
+  return [candyString, ...chocolateBars];
 }
-console.log(destructivelyAddElementToBeginningOfArray())
 
-function addElementToEndOfArray() {
-  var adding_to_end_v1 = [1]
-  return adding_to_end_v1.push("foo")
+function destructivelyAddElementToBeginningOfArray(chocolateBars, candyString) {
+  [chocolateBars.unshift(candyString)]
+  return chocolateBars
+}
+
+function addElementToEndOfArray(chocolateBars, candyString) {
+  return [chocolateBars,...candyString]
 }
 
 
-function destructivelyAddElementToEndOfArray() {
-  var adding_to_end_v2 = [1]
-  return [...adding_to_end_v2,"foo"]
-}
-
-function accessElementInArray() {
-  var example_array = [1,2,3]
-  return example_array[2]
-}
-console.log(example_array)
-
-function accessElementInArray() {
-  var example_array_2 = [1,2,3]
-  return example_array_2[2]
-}
-
-function destructivelyRemoveElementFromBeginningOfArray() {
-    var example_array_3 = [1,2,3]
-    return example_array_3.slice(1)
-}
-console.log(example_array_3)
-
-function removeElementFromBeginningOfArray() {
-  var example_array4 = [1,2,3]
-  return example_array4.slice(0, example_array4.length - 1)
-}
-
-function destructivelyRemoveElementFromEndOfArray() {
-  var example_array5 = [1,2,3]
-  return example_array5.pop()
+function destructivelyAddElementToEndOfArray(chocolateBars, candyString) {
+  chocolateBars.push(candyString)
+  return chocolateBars
 }
 
 
+function accessElementInArray(array,index) {
+  return chocolateBars[index]
+}
+
+function destructivelyRemoveElementFromBeginningOfArray(chocolateBars) {
+  chocolateBars.shift()
+  return chocolateBars
+}
+
+
+function removeElementFromBeginningOfArray(chocolateBars) {
+  return chocolateBars.slice(1)
+}
+
+function destructivelyRemoveElementFromEndOfArray(chocolateBars) {
+  chocolateBars.pop()
+  return chocolateBars
+}
+
+function removeElementFromEndOfArray(chocolateBars) {
+ return chocolateBars.slice(0, chocolateBars.length - 1)
+}
